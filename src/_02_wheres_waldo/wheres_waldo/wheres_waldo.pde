@@ -1,20 +1,26 @@
-import ddf.minim.*;
-Minim minim = new Minim(this); 
-AudioSample doh;
-AudioSample woohoo;
+//import ddf.minim.*;
+//Minim minim = new Minim(this); 
+//AudioSample doh;
+//AudioSample woohoo;
 
 void setup() {
   PImage waldo = loadImage("waldo.jpg"); // Change this to match your file name.
-  size(500, 500);
+  size(1200, 650);
+  waldo.resize(1200,650);
   image(waldo, 0, 0);
-  doh = minim.loadSample("homer-doh.wav"); //drag and drop from project onto sketch
-  woohoo = minim.loadSample("homer-woohoo.wav"); //drag and drop from project onto sketch } 
+  //doh = minim.loadSample("homer-doh.wav"); //drag and drop from project onto sketch
+  //woohoo = minim.loadSample("homer-woohoo.wav"); //drag and drop from project onto sketch } 
 }
 
 void draw() {
       // Use this print statement to find out the coordinates of Waldo
-      // println("X: " + mouseX + " Y: " + mouseY); 
-
+       println("X: " + mouseX + " Y: " + mouseY); 
+      
+        if(mouseX >= 181 && mouseX <= 246 && mouseY >= 289 && mouseY <= 387) {
+          playWoohoo();
+        } else {
+          playDoh();
+        }
       // If the mouse is on Waldo, print “Waldo found!”
 
       // If Waldo is found, also use the method below to play “Woohoo”
@@ -24,11 +30,11 @@ void draw() {
 }
 
 void playWoohoo() {
-     woohoo.stop();
-     woohoo.trigger();
+     //woohoo.stop();
+     //woohoo.trigger();
 }
 
 void playDoh() {
-     doh.stop();
-     doh.trigger();
+     //doh.stop();
+     //doh.trigger();
 }
